@@ -17,7 +17,16 @@ void print()
         sleep(1);
     }
 }
-
+void print2()
+{
+    for(int i = 10; i < 20; i++)
+    {
+        mtx.lock();         // 加锁
+        cout << i << endl;
+        mtx.unlock();       // 解锁
+        sleep(1);
+        }
+}
 int main()
 {
     thread t1(print), t2(print);
